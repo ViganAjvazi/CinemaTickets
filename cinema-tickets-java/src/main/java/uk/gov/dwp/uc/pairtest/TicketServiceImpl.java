@@ -17,18 +17,18 @@ public class TicketServiceImpl implements TicketService {
     private static int PRICE_INFANT = 0;
 
 
-    private long numAdults(TicketTypeRequest... ticketTypeRequests) {
-        return Arrays.stream(ticketTypeRequests).
+    private static int numAdults(TicketTypeRequest... ticketTypeRequests) {
+        return (int) Arrays.stream(ticketTypeRequests).
                 filter(ticketTypeRequest -> ticketTypeRequest.getTicketType() == TicketTypeRequest.Type.ADULT).count();
     }
 
-    private long numChildren(TicketTypeRequest... ticketTypeRequests) {
-        return Arrays.stream(ticketTypeRequests).
+    private static int numChildren(TicketTypeRequest... ticketTypeRequests) {
+        return (int) Arrays.stream(ticketTypeRequests).
                 filter(ticketTypeRequest -> ticketTypeRequest.getTicketType() == TicketTypeRequest.Type.CHILD).count();
     }
 
-    private long numInfants(TicketTypeRequest... ticketTypeRequests) {
-        return Arrays.stream(ticketTypeRequests).
+    private static int numInfants(TicketTypeRequest... ticketTypeRequests) {
+        return (int) Arrays.stream(ticketTypeRequests).
                 filter(ticketTypeRequest -> ticketTypeRequest.getTicketType() == TicketTypeRequest.Type.INFANT).count();
     }
 
